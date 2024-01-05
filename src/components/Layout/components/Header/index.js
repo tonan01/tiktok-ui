@@ -22,7 +22,25 @@ import Menu from '~/components/Popper/Menu';
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
-    { icon: <FontAwesomeIcon icon={faEarthAsia} />, title: 'English' },
+    {
+        icon: <FontAwesomeIcon icon={faEarthAsia} />,
+        title: 'English',
+        children: {
+            title: 'Language',
+            data: [
+                {
+                    type: 'Language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'Language',
+                    code: 'vi',
+                    title: 'Tiếng việt',
+                },
+            ],
+        },
+    },
     { icon: <FontAwesomeIcon icon={faCircleQuestion} />, title: 'Feedback and help', to: '/feedback' },
     { icon: <FontAwesomeIcon icon={faKeyboard} />, title: 'Keyboard shortcuts' },
 ];
@@ -35,6 +53,16 @@ function Header() {
             setSearchResult([]);
         }, 0);
     }, []);
+
+    //handle logic
+    const handleMenuChange = (menuItem) => {
+        switch (menuItem.type) {
+            case 'Language':
+                //Handle change language
+                break;
+            default:
+        }
+    };
 
     return (
         <header className={cx('wrapper')}>
@@ -71,7 +99,7 @@ function Header() {
                     <Button text>Upload</Button>
                     <Button primary>Login</Button>
 
-                    <Menu items={MENU_ITEMS}>
+                    <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
                         </button>
