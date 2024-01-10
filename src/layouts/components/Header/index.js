@@ -14,7 +14,7 @@ import Tippy from '@tippyjs/react';
 import { Link } from 'react-router-dom';
 import 'tippy.js/dist/tippy.css';
 
-import routesConfig from '~/config/routes';
+import config from '~/config';
 import Button from '~/components/Button';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
@@ -72,7 +72,7 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <Link to={routesConfig.home} className={cx('logo-link')}>
+                <Link to={config.routes.home} className={cx('logo-link')}>
                     <img src={images.logo} alt="Tiktok" />
                 </Link>
                 <Search />
@@ -105,7 +105,7 @@ function Header() {
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
                             <Image
-                                src="https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-euttp/324da5e4c0c5034805e7170ff2d3574d~c5_100x100.jpeg?lk3s=a5d48078&x-expires=1704873600&x-signature=gVYYSQOAOsUVQhwaagovZWalmR0%3D"
+                                src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/60a055bbbb556d226fe802b4779bfae2~c5_100x100.jpeg?lk3s=a5d48078&x-expires=1705053600&x-signature=ocWKO2h1IXPNNQU%2BZLbHZiaobzQ%3D"
                                 className={cx('user-avatar')}
                                 alt="Nguyen Van A"
                                 // fallback="https://fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
