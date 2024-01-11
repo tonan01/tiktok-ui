@@ -17,6 +17,6 @@ const publicRoutes = [
     { path: config.routes.search, component: Search, layout: null },
 ];
 
-const privateRoutes = {};
+const privateRoutes = [];
 
 export { publicRoutes, privateRoutes };
